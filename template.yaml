@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: ‘2010–09–09’
+Transform: AWS::Serverless-2016–10–31
+Description: dummy function to build our layer
+Resources:
+  DummyFunction:
+   Type: AWS::Serverless::Function
+   Properties:
+     Runtime: python3.7
+     CodeUri: layer
+     Handler: DummyFunction.lambda_handler
