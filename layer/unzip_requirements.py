@@ -17,8 +17,7 @@ if not os.path.exists(pkgdir):
     default_layer_root = '/opt'
     lambda_root = os.getcwd() if os.environ.get('IS_LOCAL') == 'true' else default_layer_root
     zip_requirements = os.path.join(lambda_root, requirements_zipname)
-    
+
     # extract zipfile in memory to /tmp dir
-    print("Extracting requirements zipfile")
     zipfile.ZipFile(zip_requirements).extractall(tempdir)
     os.rename(tempdir, pkgdir)  # Atomic
